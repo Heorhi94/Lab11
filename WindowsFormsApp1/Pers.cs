@@ -20,6 +20,10 @@ namespace WindowsFormsApp1.Person
             get { return surname; }
             set { surname = value; }
         }
+        public override string ToString()
+        {
+            return $"{name} {surname}";
+        }
         public Pers(string name,string surname)
         {
             Name = name;

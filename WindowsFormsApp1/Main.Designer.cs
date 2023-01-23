@@ -58,7 +58,8 @@
             "Integer",
             "Double",
             "String",
-            "Person"});
+            "Person",
+            "None"});
             this.types.Location = new System.Drawing.Point(367, 44);
             this.types.Name = "types";
             this.types.Size = new System.Drawing.Size(130, 24);
@@ -83,7 +84,8 @@
             this.textA.Location = new System.Drawing.Point(367, 86);
             this.textA.Name = "textA";
             this.textA.Size = new System.Drawing.Size(130, 22);
-            this.textA.TabIndex = 2;
+            this.textA.TabIndex = 1;
+            this.textA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textA_KeyPress);
             // 
             // labelA
             // 
@@ -115,6 +117,7 @@
             this.textB.Name = "textB";
             this.textB.Size = new System.Drawing.Size(130, 22);
             this.textB.TabIndex = 4;
+            this.textB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textA_KeyPress);
             // 
             // labelC
             // 
@@ -135,6 +138,7 @@
             this.textC.Name = "textC";
             this.textC.Size = new System.Drawing.Size(130, 22);
             this.textC.TabIndex = 6;
+            this.textC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textA_KeyPress);
             // 
             // textDisplay
             // 
@@ -152,7 +156,7 @@
             // 
             this.bDispalay.Location = new System.Drawing.Point(46, 284);
             this.bDispalay.Name = "bDispalay";
-            this.bDispalay.Size = new System.Drawing.Size(75, 23);
+            this.bDispalay.Size = new System.Drawing.Size(75, 30);
             this.bDispalay.TabIndex = 9;
             this.bDispalay.Text = "Display";
             this.bDispalay.UseVisualStyleBackColor = true;
@@ -162,7 +166,7 @@
             // 
             this.bAdd.Location = new System.Drawing.Point(431, 284);
             this.bAdd.Name = "bAdd";
-            this.bAdd.Size = new System.Drawing.Size(75, 23);
+            this.bAdd.Size = new System.Drawing.Size(75, 30);
             this.bAdd.TabIndex = 10;
             this.bAdd.Text = "Add";
             this.bAdd.UseVisualStyleBackColor = true;
@@ -172,7 +176,7 @@
             // 
             this.bSort.Location = new System.Drawing.Point(189, 284);
             this.bSort.Name = "bSort";
-            this.bSort.Size = new System.Drawing.Size(75, 23);
+            this.bSort.Size = new System.Drawing.Size(75, 30);
             this.bSort.TabIndex = 11;
             this.bSort.Text = "Sort";
             this.bSort.UseVisualStyleBackColor = true;
@@ -248,7 +252,7 @@
             // 
             this.bClear.Location = new System.Drawing.Point(350, 284);
             this.bClear.Name = "bClear";
-            this.bClear.Size = new System.Drawing.Size(75, 23);
+            this.bClear.Size = new System.Drawing.Size(75, 30);
             this.bClear.TabIndex = 18;
             this.bClear.Text = "Clear";
             this.bClear.UseVisualStyleBackColor = true;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.Person
 {
-    public class Pers
+    public class Pers:IComparable<Pers>
     {
         string name;
         public string Name
@@ -24,6 +24,20 @@ namespace WindowsFormsApp1.Person
         {
             return $"{name} {surname}";
         }
+
+        public int CompareTo(Pers obj)
+        {
+            if (obj is Pers pers) 
+            {
+                return Surname.CompareTo(pers.Surname);
+            }
+            else
+            {
+                throw new ArgumentException("Incorrect parameter value");
+            }
+          
+        }
+
         public Pers(string name,string surname)
         {
             Name = name;

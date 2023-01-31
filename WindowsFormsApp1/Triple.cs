@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.Triple
 {
-    public class Triple<T>
+    public class Triple<T> where T:IComparable<T>
     {
         public T A { get; set; }
         public T B { get; set; }
@@ -50,11 +50,26 @@ namespace WindowsFormsApp1.Triple
         
         public void Sort()
         {
-            List<T> list = new List<T> { A, B, C };
-            list.Sort();
-            A = list[0];
-            B = list[1];
-            C = list[2];
+            if (A.CompareTo(B) > 0)
+            {
+                T temp = A;
+                A = B;
+                B = temp;
+            }
+
+            if (B.CompareTo(C) > 0)
+            {
+                T temp = B;
+                B = C;
+                C = temp;
+            }
+
+            if (A.CompareTo(B) > 0)
+            {
+                T temp = A;
+                A = B;
+                B = temp;
+            }
         }
     }
 }

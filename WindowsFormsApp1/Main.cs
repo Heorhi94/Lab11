@@ -18,10 +18,12 @@ namespace WindowsFormsApp1
         Triple<double> tripleDouble;
         Triple<Pers> triplePers;
         Triple<string> tripleString;
+        Pers pers;
         public Main()
         {
             InitializeComponent();
             types.SelectedIndex = 4;
+
         }
 
         private void types_SelectedIndexChanged(object sender, EventArgs e)
@@ -115,42 +117,98 @@ namespace WindowsFormsApp1
         }
 
         private void bDispalay_Click(object sender, EventArgs e)
-        {
+        {           
             if (types.SelectedIndex == 0)
             {
-                textDisplay.Text = tripleINt.ToString();
+                if (tripleINt == null)
+                {
+                    MessageBox.Show("No display data,please click button Add");
+                }
+                else
+                {
+                    textDisplay.Text = tripleINt.ToString();
+                }                              
             }
-            if(types.SelectedIndex == 1)
+            if (types.SelectedIndex == 1)
             {
-                textDisplay.Text =tripleDouble.ToString();
+                if (tripleDouble == null)
+                {
+                    MessageBox.Show("No display data,please click button Add");
+                }
+                else
+                {
+                    textDisplay.Text = tripleDouble.ToString();
+                }                 
             }
             if (types.SelectedIndex == 2)
             {
-                textDisplay.Text = tripleString.ToString();
+                if(tripleString==null)
+                {
+                    MessageBox.Show("No display data,please click button Add");
+                }
+                else
+                {
+                    textDisplay.Text = tripleString.ToString();                 
+                }             
             }
             if (types.SelectedIndex == 3)
             {
-                textDisplay.Text = triplePers.ToString();
-            }
+                if(triplePers==null)
+                {
+                    MessageBox.Show("No display data,please click button Add");
+                }
+                else
+                {
+                    textDisplay.Text = triplePers.ToString();                  
+                }             
+            }         
         }
 
         private void bSort_Click(object sender, EventArgs e)
         {
             if(types.SelectedIndex == 0)
             {
-                tripleINt.Sort();
+                if (tripleINt == null)
+                {
+                    MessageBox.Show("No Sorted data,please click button Add");
+                }
+                else
+                {
+                    tripleINt.Sort();
+                }      
             }
             if (types.SelectedIndex == 1)
             {
-                tripleDouble.Sort();
+                if (tripleDouble == null)
+                {
+                    MessageBox.Show("No Sorted data,please click button Add");
+                }
+                else
+                {
+                    tripleDouble.Sort();
+                }
             }
             if (types.SelectedIndex == 2)
             {
-                tripleString.Sort();
+                if (tripleString == null)
+                {
+                    MessageBox.Show("No Sorted data,please click button Add");
+                }
+                else
+                {
+                    tripleString.Sort();
+                }      
             }
             if (types.SelectedIndex == 3)
             {
-                triplePers.Sort();
+                if (triplePers == null)
+                {
+                    MessageBox.Show("No Sorted data,please click button Add");
+                }
+                else
+                {
+                    triplePers.Sort();
+                }     
             }
         }
 
@@ -197,6 +255,11 @@ namespace WindowsFormsApp1
                     e.Handled = true;
                 }
             }
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }
